@@ -24,6 +24,8 @@ app.use(cors({
 
 app.get('/', (req, res) => res.send('StudyNook API is running...'));
 
+app.use('/api/auth', require('./routes/auth'));
+
 app.use((req, res) => res.status(404).json({ message: 'API Route Not Found' }));
 app.use((err, req, res, next) => {
   console.error(err.stack);
