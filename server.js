@@ -26,6 +26,7 @@ app.get('/', (req, res) => res.send('StudyNook API is running...'));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/rooms', require('./routes/rooms'));
+app.use('/api/bookings', require('./routes/bookings'));
 
 app.use((req, res) => res.status(404).json({ message: 'API Route Not Found' }));
 app.use((err, req, res, next) => {
